@@ -6,7 +6,7 @@ file on POSIX system. This software does not come with any warranty. Use at
 your own risk. I would not take responsibility for blowing up your system
 because of bug in this software.
 
-This just adds/removes a desired site to the /etc/host file as following in its
+This just adds/removes a desired site to the /etc/hosts file as following in its
 own block::
 
     127.0.0.1   www.example.com
