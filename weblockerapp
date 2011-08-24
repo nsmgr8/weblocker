@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+
+# The MIT License (MIT)
+# Copyright (c) 2011 M Nasimul Haque
+
+import signal
+from weblocker import main
+
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+raise SystemExit(main())
+

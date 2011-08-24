@@ -1,0 +1,7 @@
+*.pyc
+.be/id-cache
+*.swp
+*~
+build
+MANIFEST
+dist
