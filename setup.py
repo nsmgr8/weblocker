@@ -8,7 +8,7 @@ from distutils.core import setup
 from weblocker import VERSION
 
 try:
-    long_description = open('README.rst', 'r').read(),
+    long_description = open('README.rst', 'r').read()
 except:
     long_description = ''
 
