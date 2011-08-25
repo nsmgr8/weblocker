@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>WebLocker</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="weblocker.qrc">
+    <normaloff>:/images/weblocker.png</normaloff>:/images/weblocker.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
@@ -214,7 +218,9 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="weblocker.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>quitButton</sender>

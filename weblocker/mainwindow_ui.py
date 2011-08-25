@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'resources/mainwindow.ui'
 #
-# Created: Wed Aug 24 20:41:29 2011
+# Created: Thu Aug 25 15:12:27 2011
 #      by: pyside-uic 0.2.11 running on PySide 1.0.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,6 +13,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/images/weblocker.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtGui.QGridLayout(self.centralwidget)
@@ -129,3 +132,4 @@ class Ui_MainWindow(object):
         self.quitButton.setText(QtGui.QApplication.translate("MainWindow", "&Quit", None, QtGui.QApplication.UnicodeUTF8))
         self.refreshButton.setText(QtGui.QApplication.translate("MainWindow", "Re&fresh", None, QtGui.QApplication.UnicodeUTF8))
 
+import weblocker_rc

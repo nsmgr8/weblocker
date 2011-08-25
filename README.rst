@@ -1,3 +1,4 @@
+
 WebLocker
 =========
 
@@ -27,7 +28,11 @@ After this you can run it via the commandline::
 
     $ sudo weblockerapp
 
-Note that, this software writes to the system file. Therefore, it requires to
+There will also be a menu entry at::
+
+    Applications > System > WebLocker
+
+Note that, this software modifies/writes system files. Therefore, it requires to
 be run as root user.
 
 License
@@ -54,4 +59,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Acknowledgement
+===============
+
+Icon courtesy by `Webdesigner Depot`_.
+
+.. _Webdesigner Depot : http://www.webdesignerdepot.com/
 

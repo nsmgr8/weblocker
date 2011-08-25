@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="images">
+    <file>weblocker.png</file>
+  </qresource>
+</RCC>

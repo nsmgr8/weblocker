@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=WebLocker
+GenericName=Web Locker
+Type=Application
+Exec=gksu weblockerapp
+Icon=weblocker
+Categories=System;X-MandrivaLinux-System;Application;
+Comment=Add/remove site blocker using /etc/hosts
