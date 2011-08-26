@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'resources/mainwindow.ui'
 #
-# Created: Thu Aug 25 15:12:27 2011
+# Created: Fri Aug 26 16:49:38 2011
 #      by: pyside-uic 0.2.11 running on PySide 1.0.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -38,11 +38,21 @@ class Ui_MainWindow(object):
         self.blockButton.setObjectName("blockButton")
         self.horizontalLayout.addWidget(self.blockButton)
         self.verticalLayout.addLayout(self.horizontalLayout)
-        self.listView = QtGui.QListView(self.BlockedSites)
-        self.listView.setAlternatingRowColors(True)
-        self.listView.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
-        self.listView.setObjectName("listView")
-        self.verticalLayout.addWidget(self.listView)
+        self.tableView = QtGui.QTableView(self.BlockedSites)
+        self.tableView.setAlternatingRowColors(True)
+        self.tableView.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
+        self.tableView.setSortingEnabled(True)
+        self.tableView.setObjectName("tableView")
+        self.verticalLayout.addWidget(self.tableView)
+        self.horizontalLayout_4 = QtGui.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.label_2 = QtGui.QLabel(self.BlockedSites)
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout_4.addWidget(self.label_2)
+        self.searchLine = QtGui.QLineEdit(self.BlockedSites)
+        self.searchLine.setObjectName("searchLine")
+        self.horizontalLayout_4.addWidget(self.searchLine)
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.currentHostsText = QtGui.QPlainTextEdit(self.BlockedSites)
         self.currentHostsText.setReadOnly(True)
         self.currentHostsText.setObjectName("currentHostsText")
@@ -108,6 +118,7 @@ class Ui_MainWindow(object):
         self.statusbar = QtGui.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        self.label_2.setBuddy(self.searchLine)
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
@@ -120,6 +131,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "WebLocker", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("MainWindow", "Enter website", None, QtGui.QApplication.UnicodeUTF8))
         self.blockButton.setText(QtGui.QApplication.translate("MainWindow", "Add to &Block List", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("MainWindow", "S&earch", None, QtGui.QApplication.UnicodeUTF8))
         self.importButton.setToolTip(QtGui.QApplication.translate("MainWindow", "You can bulk add sites from a file. The sites must be in separate lines.", None, QtGui.QApplication.UnicodeUTF8))
         self.importButton.setText(QtGui.QApplication.translate("MainWindow", "&Import", None, QtGui.QApplication.UnicodeUTF8))
         self.hostsButton.setText(QtGui.QApplication.translate("MainWindow", "Show &Hosts File", None, QtGui.QApplication.UnicodeUTF8))

@@ -2,7 +2,7 @@
 # The MIT License (MIT)
 # Copyright (c) 2011 M Nasimul Haque
 
-VERSION = '0.4'
+VERSION = '0.5'
 
 def main():
     import sys

@@ -38,10 +38,14 @@ class HostsFile(QtCore.QAbstractTableModel):
                 return self.header[section]
             else:
                 return section + 1
+        if role == QtCore.Qt.TextAlignmentRole and orientation == QtCore.Qt.Vertical:
+            return QtCore.Qt.AlignRight
 
     def data(self, index, role):
         if role == QtCore.Qt.DisplayRole:
             return self.blocked_sites[index.row()]
+        if role == QtCore.Qt.TextAlignmentRole:
+            return QtCore.Qt.AlignCenter
 
     def read_hosts(self):
         block = False

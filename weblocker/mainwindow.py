@@ -18,7 +18,10 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         self.hosts_model = HostsFile()
-        self.listView.setModel(self.hosts_model)
+        self.proxy_model = QtGui.QSortFilterProxyModel()
+        self.proxy_model.setSourceModel(self.hosts_model)
+        self.tableView.setModel(self.proxy_model)
+        self.tableView.horizontalHeader().setStretchLastSection(True)
         self.backup_model = Backup()
         self.backupListView.setModel(self.backup_model)
 
@@ -37,6 +40,10 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.refreshButton.clicked.connect(self.refresh)
         self.importButton.clicked.connect(self.import_sites)
         self.hosts_model.hosts_modified.connect(self.load_hosts_file)
+        self.searchLine.textChanged.connect(self.search)
+
+    def search(self, text):
+        self.proxy_model.setFilterFixedString(text)
 
     def load_hosts_file(self):
         self.currentHostsText.setPlainText(open(self.hosts_model.HOSTS_FILE, 'r').read())
@@ -45,7 +52,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         filename = QtGui.QFileDialog.getOpenFileName(self, 'Import File')
         if filename:
             filename = filename[0]
-        else:
+        if not filename:
             return
         with file(filename, 'r') as f:
             for site in f:
@@ -77,7 +84,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
     def remove_sites(self):
         remove_list = []
-        for item in self.listView.selectedIndexes():
+        for index in self.tableView.selectedIndexes():
+            item = self.proxy_model.mapToSource(index)
             remove_list.append(self.hosts_model.blocked_sites[item.row()])
         for site in remove_list:
             self.hosts_model.blocked_sites.remove(site)
